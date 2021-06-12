@@ -1,6 +1,6 @@
 import requests
 import datetime
-import schedule
+
 import time
 
 import math
@@ -9,7 +9,7 @@ import math
 
 
 #==========================================vaccine_notifier Function starts==============================
-def vaccine_notifer():
+def vaccine_notifier():
 
     theday = datetime.date.today()
     start = theday - datetime.timedelta(days=0)
@@ -86,13 +86,6 @@ def vaccine_notifer():
 
 
 #--------------------------scheduling notification-------------------------
-schedule.every().day.at("09:30").do(vaccine_notifer)
-schedule.every().day.at("10:30").do(vaccine_notifer)
-schedule.every().day.at("14:00").do(vaccine_notifer)
-schedule.every().day.at("16:00").do(vaccine_notifer)
-schedule.every().day.at("20:30").do(vaccine_notifer)
-
-print("Execution started...")
-while 1:
-    schedule.run_pending()
-    time.sleep(1)
+if __name__ == "__main__":
+    print("executing")
+    vaccine_notifier()
