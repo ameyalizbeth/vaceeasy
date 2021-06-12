@@ -24,7 +24,7 @@ def vaccine_notifier():
         d1=str(d.strftime("%d-%m-%Y"))
         url = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode={0}&date={1}'.format(686575,d1)
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0'}
-        x = requests.get(url)
+        x = requests.get(url, headers=headers)
         data = x.json()
         print(data)
         cnt1=1
@@ -78,7 +78,7 @@ def vaccine_notifier():
     else:
         messageFor18 = messageFor18 + "*No slot available for 18 and above age*"
 
-    base_url = 'https://api.telegram.org/bot1750625715:AAHfM1JQlxJGvYMFBpZtd9iL9kklmC7l0A8/sendMessage?chat_id=-421663974&text={0}'.format(messageFor18)
+    base_url = 'https://api.telegram.org/botYOURAPI/sendMessage?chat_id=******&text={0}'.format(messageFor18)
     print("Response:",requests.get(base_url))
     print("Message Sent for 18+!")
 
