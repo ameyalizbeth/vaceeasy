@@ -26,7 +26,7 @@ def vaccine_notifier():
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0'}
         x = requests.get(url, headers=headers)
         data = x.json()
-        print("data")
+        print(data)
         cnt1=1
         cnt2=1
         centre_detail_1 = ""
