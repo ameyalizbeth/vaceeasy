@@ -24,7 +24,7 @@ def vaccine_notifier():
         d1=str(d.strftime("%d-%m-%Y"))
         url = 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode={0}&date={1}'.format(686575,d1)
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0'}
-        x = requests.get(url, headers=headers)
+        x = requests.get(url)
         data = x.json()
         print(data)
         cnt1=1
